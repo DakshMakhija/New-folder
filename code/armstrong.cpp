@@ -1,27 +1,30 @@
-#include<iostream>
-#include<math.h>
-using namespace std;
-int main() {
-    int n,n1,n2,i;
-	int d,sum,s;
-    int count=0;
-    cin>>n1;
-    cin>>n2;
-    for(i=n1;i<=n2;i++){
-        n=i;
-        sum =0;
-    while(n!=0){
-      d=n%10;
-      s=pow(d,3);
-      sum=sum+s;
-      n=n/10;
-     
-    }
-    if(sum == i){
-        count++;//or for know the number you can simply write cout<<i<<" ";
-    }
-}
- cout<<count<<" ";
+#include <bits/stdc++.h>
 
-	return 0;
+using namespace std;
+
+int main()
+{
+    long long int n;
+    cin>>n;
+    int digits = 0;
+    int num=n;
+    while(num>0)
+    {
+        num =num/10;
+        ++digits;
+    }
+    int sum = 0,r;
+    num=n;
+    while(num>0)
+    {
+        r = num%10;
+        num = num/10;
+        sum = sum + pow(r,digits);
+    }
+    if(sum == n)
+        cout<<"true"<<endl;
+    else
+        cout<<"false"<<endl;    
+
+    return 0;
 }

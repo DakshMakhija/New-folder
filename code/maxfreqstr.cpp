@@ -1,31 +1,24 @@
 
-#include<bits/stdtr1c++.h>
-
+#include<bits/stdc++.h>
 using namespace std;
-
-void count(string s){
- char result;
- int max=0;
-int count[256]={0};
-sort(s.begin(),s.end());
-for(int i=0;i<s.length();i++){
-    if(s[i+1]==s[i]){
-        count[s[i]]++;
-    }
-    if(max<count[s[i]]){
-        max=count[s[i]];
-        result=s[i];
-    }
-}
-cout<<result<<endl;
-
-}
+void count(string str)
+{ int max=0;
+  char result;
+  int count[26]={0};
+  for(int i=0;i<str.size();i++)
+  {
     
-
-
-int main(){
-    string s;
-    cin>>s;
-    count(s);
-    return 0;
+     count[str[i]]++;
+    if (max < count[str[i]]) { 
+            max = count[str[i]]; 
+            result = str[i]; 
+        } 
+  }
+  cout<<result<<endl;
+}
+int main() {
+  string str;
+  cin>>str;
+  count(str);
+	return 0;
 }
